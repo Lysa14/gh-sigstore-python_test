@@ -16,13 +16,7 @@ jobs:
       steps:
         - name: Checkout repository
           uses: actions/checkout@v2
-        - uses: sigstore/gh-action-sigstore-python@v3.0.0  
-          with:
-            inputs: ./file.txt
-            verify: false
-            release-signing-artifacts: true
-            verify-cert-identity: empty
-            verify-oidc-issuer: empty       
+     
         - name: Create release
           uses: softprops/action-gh-release@v1
           with:
@@ -32,3 +26,13 @@ jobs:
             draft: false
             prerelease: false
             token: ${{ secrets.GITHUB_TOKEN }}
+
+
+        - uses: sigstore/gh-action-sigstore-python@v3.0.0  
+          with:
+              inputs: ./file.txt
+              verify: false
+              internal-be-careful-debug: true
+              release-signing-artifacts: true
+              verify-cert-identity: empty
+              verify-oidc-issuer: empty      
