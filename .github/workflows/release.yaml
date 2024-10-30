@@ -17,7 +17,7 @@ jobs:
           uses: softprops/action-gh-release@v1
           with:
             body_path: ${{ github.workspace }}/CHANGELOG.md
-            files: . 
+            files: file.txt
             tag_name: ${{ github.ref.tag_name}}  
             name: ${{ github.ref.tag_name}}
             draft: false
