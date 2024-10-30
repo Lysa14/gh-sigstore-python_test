@@ -23,6 +23,7 @@ jobs:
         - name: Create release
           uses: softprops/action-gh-release@v1
           with:
+            files: ./file.txt
             body_path: ${{ github.workspace }}/CHANGELOG.md
             tag_name: ${{ github.ref.tag_name}}  
             name: ${{ github.ref.tag_name}}
