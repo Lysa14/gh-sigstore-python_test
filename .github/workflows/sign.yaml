@@ -19,7 +19,6 @@ jobs:
       with:
         inputs: ./file.txt
         verify: false
-        upload-signing-artifacts: true # ou false par défaut
         release-signing-artifacts: true
         # verify-cert-identity: empty #Empty par défaut
         # verify-oidc-issuer: empty #https://oauth2.sigstage.dev/auth #Empty par défaut
