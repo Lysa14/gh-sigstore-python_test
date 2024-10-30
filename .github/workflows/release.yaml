@@ -1,5 +1,5 @@
 
-name: Release Workflow
+name: sigstore signing workflow
 
 
 on:
@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 jobs:
-  helm-release:
+  sign-with-sigstore:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,19 +24,4 @@ jobs:
         with:
           inputs: ./file.txt
           release-signing-artifacts: true
-
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: ./file.txt
-          body_path: ${{ github.workspace }}/CHANGELOG.md
-          tag_name: ${{ github.ref_name }}  # Utilisation correcte pour récupérer le tag
-          name: ${{ github.ref_name }}
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Correction pour utiliser le GITHUB_TOKEN
-
-
-
-                  
+          upload-signing-artifacts: true
