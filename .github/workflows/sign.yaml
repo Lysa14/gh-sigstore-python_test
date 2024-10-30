@@ -15,10 +15,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - uses: sigstore/gh-action-sigstore-python@v3.0.0
-    #   with:
-    #     inputs: ./file.txt
-    #     verify: false
-    #     release-signing-artifacts: true
-        # verify-cert-identity: empty #Empty par défaut
-        # verify-oidc-issuer: empty #https://oauth2.sigstage.dev/auth #Empty par défaut
+    # - uses: sigstore/gh-action-sigstore-python@v3.0.0
+    # #   with:
+    # #     inputs: ./file.txt
+    # #     verify: false
+    # #     release-signing-artifacts: true
+    #     # verify-cert-identity: empty #Empty par défaut
+    #     # verify-oidc-issuer: empty #https://oauth2.sigstage.dev/auth #Empty par défaut

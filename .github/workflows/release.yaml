@@ -16,7 +16,7 @@ jobs:
       steps:
         - name: Checkout repository
           uses: actions/checkout@v2
-                  
+        - uses: sigstore/gh-action-sigstore-python@v3.0.0         
         - name: Create release
           uses: softprops/action-gh-release@v1
           with:
