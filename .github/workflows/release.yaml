@@ -18,6 +18,6 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}  # Nom du tag pour la Release
           release_name: "Release ${{ github.ref_name }}"
-          body_path: .  # Utilise le changelog pour la description de la Release
+          body: "Release ${{ github.ref_name }}"
           draft: false
           prerelease: false
