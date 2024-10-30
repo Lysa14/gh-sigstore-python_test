@@ -5,6 +5,10 @@ on:
   push:
      tags:
        - '*'     
+permissions:
+    contents: write
+    id-token: write
+
 jobs:
     helm-release:
       runs-on: ubuntu-latest
