@@ -17,9 +17,7 @@ jobs:
         - name: Checkout repository
           uses: actions/checkout@v2
         - uses: sigstore/gh-action-sigstore-python@v3.0.0  
-          with:
-              inputs: ./file.txt
-              release-signing-artifacts: true
+
         - name: Create release
           uses: softprops/action-gh-release@v1
           with:
