@@ -31,7 +31,6 @@ jobs:
         - uses: sigstore/gh-action-sigstore-python@v3.0.0  
           with:
               inputs: ./file.txt
-              verify: true
               internal-be-careful-debug: true
               release-signing-artifacts: true
               verify-cert-identity: empty
