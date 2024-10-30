@@ -1,0 +1,23 @@
+name: Release Pipeline
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Déclenche la pipeline uniquement sur les tags de version
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Token d'accès pour GitHub
+        with:
+          tag_name: ${{ github.ref_name }}  # Nom du tag pour la Release
+          release_name: "Release ${{ github.ref_name }}"
+          body_path: .  # Utilise le changelog pour la description de la Release
+          draft: false
+          prerelease: false
