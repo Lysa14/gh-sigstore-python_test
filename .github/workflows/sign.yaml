@@ -16,6 +16,6 @@ jobs:
     - uses: sigstore/gh-action-sigstore-python@v3.0.0
       with:
         inputs: ./file.txt
-        verify: true # ou false par défaut
-        verify-cert-identity: john.hancock@example.co #Empty par défaut
-        verify-oidc-issuer: https://oauth2.sigstage.dev/auth #Empty par défaut
+        verify: false # ou false par défaut
+        # verify-cert-identity: empty #Empty par défaut
+        # verify-oidc-issuer: empty #https://oauth2.sigstage.dev/auth #Empty par défaut
