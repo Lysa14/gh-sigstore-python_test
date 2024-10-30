@@ -33,5 +33,4 @@ jobs:
               inputs: ./file.txt
               internal-be-careful-debug: true
               release-signing-artifacts: true
-              verify-cert-identity: empty
-              verify-oidc-issuer: empty      
+                  
